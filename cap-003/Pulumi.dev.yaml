@@ -1,0 +1,16 @@
+config:
+    aws:region: us-east-1
+    cap-003:nombre_vpc: vpc-a
+    cap-003:subnet_publica: 
+      nombre: subnet_publica
+      cidr: 10.0.1.0/24
+      zona: a
+      ip_lunch: True
+    cap-003:subnet_privada: 
+      nombre: subnet_privada
+      cidr: 10.0.2.0/24
+      zona: b
+      ip_lunch: True
+  
+  
+  

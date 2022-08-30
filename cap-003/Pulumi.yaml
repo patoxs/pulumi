@@ -1,0 +1,6 @@
+name: cap-003
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Construccion VPC - Tutorial Pulumi
