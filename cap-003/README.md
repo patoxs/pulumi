@@ -1,4 +1,4 @@
-# Pulumi Tutorial Básico - Cap.3: Crear una VPC, una sunet publica y privada 8-)
+# Pulumi Tutorial Básico - Cap.3: Crear una VPC, una subnet publica y privada
 
 This Repo contains example of using Pulumi to build and deploy resources AWS (VPC, subnet public and private, Internet Gateway and Nat Gateway.)
 

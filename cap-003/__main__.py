@@ -70,6 +70,45 @@ ng = aws.ec2.NatGateway(
 )
 
 
+### tablas de rutas ###
+route_table_public = aws.ec2.RouteTable("public",
+    vpc_id=vpc_principal.id,
+    routes=[
+        aws.ec2.RouteTableRouteArgs(
+            cidr_block= "0.0.0.0/0",
+            gateway_id=gw.id,
+        )
+    ],
+    tags={
+        "Name": "rt_public",
+    },
+    opts=pulumi.ResourceOptions(depends_on=[gw, vpc_principal])
+)
+
+route_table_nat = aws.ec2.RouteTable("nat",
+    vpc_id=vpc_principal.id,
+    routes=[
+        aws.ec2.RouteTableRouteArgs(
+            cidr_block= "0.0.0.0/0",
+            gateway_id=ng.id,
+        )
+    ],
+    tags={
+        "Name": "rt_nat", 
+    },
+    opts=pulumi.ResourceOptions(depends_on=[gw, vpc_principal])
+)
+
+route_table_private = aws.ec2.RouteTable("privada",
+    vpc_id=vpc_principal.id,
+    routes=[],
+    tags={
+        "Name": "rt_privada",
+    },
+    opts=pulumi.ResourceOptions(depends_on=[gw, vpc_principal])
+)
+
+
 pulumi.export('vpc_arn', vpc_principal.arn)
 pulumi.export('vpc_id', vpc_principal.id)
 pulumi.export('subnet_publica', subnet_publica.id)
