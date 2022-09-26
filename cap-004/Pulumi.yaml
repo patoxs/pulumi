@@ -1,0 +1,6 @@
+name: cap-004
+description: Secret and Policies
+runtime:
+    name: python
+    options:
+        virtualenv: venv
