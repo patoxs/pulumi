@@ -1,0 +1,6 @@
+name: cap-005
+description: Lambda - Calculator
+runtime:
+    name: python
+    options:
+        virtualenv: venv
